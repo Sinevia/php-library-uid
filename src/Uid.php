@@ -19,13 +19,14 @@ class Uid {
 
     /**
      * A human friendly, numbers only UUID, which has the nano seconds precission
-     * UniqueId and 12 random digits too insure uniqueness
+     * 32 digits - YYYYMMDD-HHMM-SSMM-MMMMRRRRRRRRRRRR
      * @return string
      */
-    public static function humanUuid($options = []) {
+    function humanUuid($options = []) {
         $useDashes = isset($options['useDashes']) ? $options['useDashes'] : false;
         $dash = $useDashes ? '-' : '';
-        return date('YmdHis') . substr(explode(" ", microtime())[0], 2, 8) . rand(0, 999999999999);
+        $uuid = date('YmdHis') . substr(explode(" ", microtime())[0], 2, 8) . rand(100000000000, 999999999999);
+		return substr($uuid,0,8).$dash.substr($uuid,8,4).$dash.substr($uuid,12,4).$dash.substr($uuid,16,4).$dash.substr($uuid,20,12);
     }
 
     /**
@@ -75,9 +76,33 @@ class Uid {
         return self::timestampUid() . $postfix;
     }
 
+    public static function isHumanUid($string) {
+        $string = str_replace('-', '', $string);
+        if (is_numeric($string) == true AND strlen($string) == 32) {
+            return true;
+        }
+        return false;
+    }
+    
+    public static function isNanoUid($string) {
+        $string = str_replace('-', '', $string);
+        if (is_numeric($string) == true AND strlen($string) == 23) {
+            return true;
+        }
+        return false;
+    }
+    
     public static function isMicroUid($string) {
         $string = str_replace('-', '', $string);
         if (is_numeric($string) == true AND strlen($string) == 20) {
+            return true;
+        }
+        return false;
+    }
+    
+    public static function isSecUid($string) {
+        $string = str_replace('-', '', $string);
+        if (is_numeric($string) == true AND strlen($string) == 14) {
             return true;
         }
         return false;
