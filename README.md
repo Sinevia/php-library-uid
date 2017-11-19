@@ -1,4 +1,4 @@
-# PHP Library SqlDB
+# PHP Library Uid
 
 Class to generate unique identifying strings. Largest attention is paid on human friendly unique identifiers (dated digits)
 
