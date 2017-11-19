@@ -23,7 +23,12 @@ Add the following to your composer file:
 ## Usage ##
 
 
-```
-#!php
-
+```php
+\Sinevia\Uid::humanUuid();       // 32 digits - 12 random digits
+\Sinevia\Uid::nanoUid();         // 23 digits - YYYYMMDD-HHMMSS-MMMMMM-NNN
+\Sinevia\Uid::microUid();        // 20 digits - YYYYMMDD-HHMMSS-MMMMMM
+\Sinevia\Uid::secUid();          // 14 digits - YYYYMMDD-HHMMSS
+\Sinevia\Uid::timestampUid();    // Unix time (seconds since 1 Jan 1970)
+\Sinevia\Uid::timestampUidWithRandomPostFix(12);
+\Sinevia\Uid::isMicroUid(1);
 ```
