@@ -5,21 +5,33 @@ Class to generate unique identifying strings. Largest attention is paid on human
 ## Background ##
 
 - Human UUID (32 digits)
+
   Format: YYYYMMDD-HHMM-SSMM-MMMMRRRRRRRRRRR
+  
   2017111908492665991498485465 (with dashes: 20171119-0849-2665-991498485465)
   
 - Nano UID (23 digits)
+
   Format: YYYYMMDD-HHMMSS-MMMMMM-NNN
+  
+  Examples:
+  
   20171119084926659914984 (with dashes: 20171119-084926-659914-984)
   
 - Micro UID (20 digits)
+
   Format: YYYYMMDD-HHMMSS-MMMMMM
+  
   Examples:
+  
   20171119084926659914 (with dashes: 20171119-084926-659914)
   
 - Seconds UID (14 digits)
+
   Format: YYYYMMDD-HHMMSS
+  
   Examples:
+  
   20171119084926 (with dashes: 20171119-084926)
   
 - Timestamp UID (Unix Time - seconds since 1 Jan 1970)
