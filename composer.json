@@ -1,7 +1,6 @@
 {
     "name": "sinevia/php-library-uid",
     "description": "PHP Library Uid",
-    "version": "0.0.1",
     "type": "library",
     "keywords": ["uid", "library", "php", "sinevia"],    
     "homepage": "http://github.com/sinevia/php-library-uid",
