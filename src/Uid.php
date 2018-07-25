@@ -3,7 +3,7 @@
 // ========================================================================= //
 // SINEVIA CONFIDENTIAL                                  http://sinevia.com  //
 // ------------------------------------------------------------------------- //
-// COPYRIGHT (c) 2008-2017 Sinevia Ltd                   All rights reserved //
+// COPYRIGHT (c) 2008-2018 Sinevia Ltd                   All rights reserved //
 // ------------------------------------------------------------------------- //
 // LICENCE: All information contained herein is, and remains, property of    //
 // Sinevia Ltd at all times.  Any intellectual and technical concepts        //
@@ -22,7 +22,7 @@ class Uid {
      * 32 digits - YYYYMMDD-HHMM-SSMM-MMMMRRRRRRRRRRRR
      * @return string
      */
-    function humanUuid($options = []) {
+    public static function humanUuid($options = []) {
         $useDashes = isset($options['useDashes']) ? $options['useDashes'] : false;
         $dash = $useDashes ? '-' : '';
         $uuid = date('YmdHis') . substr(explode(" ", microtime())[0], 2, 8) . rand(100000000000, 999999999999);
