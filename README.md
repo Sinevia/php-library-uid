@@ -1,8 +1,11 @@
 # PHP Library Uid
 
-Class to generate unique identifying strings. Largest attention is paid on human friendly unique identifiers (dated digits)
+Class to generate unique identifying strings. Largest attention is paid on human friendly unique identifiers (dated digits).
 
-## Background ##
+
+## Supported UID Type ##
+
+It supports several types of unique identifiers. The type you may want to use depends on how random and long you want the identifier to be. For most of the user cases a Micro UUID (20 chars) should be fine. A human UUID (32 chars) should almost never be used where a human is involved as too "mind bogling" to work with.
 
 - Human UUID (32 digits)
 
@@ -38,18 +41,10 @@ Class to generate unique identifying strings. Largest attention is paid on human
 
 ## Installation ##
 
-Add the following to your composer file:
+Via composer
 
-```json
-   "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/sinevia/php-library-uid.git"
-        }
-    ],
-    "require": {
-        "sinevia/php-library-uid": "dev-master"
-    },
+```sh
+composer require sinevia/php-library-uid
 ```
 
 ## Usage ##
