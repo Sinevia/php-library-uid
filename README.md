@@ -2,6 +2,8 @@
 
 Class to generate unique identifying strings. Largest attention is paid on human friendly unique identifiers (dated digits).
 
+![No Dependencies](https://img.shields.io/badge/no-dependencies-success.svg)
+
 
 ## Supported UID Type ##
 
